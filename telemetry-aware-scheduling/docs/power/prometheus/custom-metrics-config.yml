@@ -88,5 +88,5 @@ kind: ConfigMap
 metadata:
   labels:
     app: prometheus-adapter
-  name: custom-metrics-prometheus-adapter
+  name: adapter-config
   namespace: custom-metrics

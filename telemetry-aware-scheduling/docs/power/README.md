@@ -82,7 +82,7 @@ kubectl get pods -l app.kubernetes.io/name=kube-state-metrics
 ### 3: Configure Prometheus and the Prometheus adapter
 Now that we have our metrics collections agents up and running, Prometheus and Prometheus Adapter, which makes Prometheus metrics available inside the cluster to Telemetry Aware Scheduling, need to be configured to scrape metrics from collectd and Kube State Metrics and to calculate the compound power metrics linking pods to power usage.
 
-``kubectl apply -f $POW_DIR/prometheus/prometheus-config.yaml && kubectl delete pods -nmonitoring -lapp=prometheus -lcomponent=server && kubectl apply -f $POW_DIR/prometheus/custom-metrics-config.yml && kubectl delete pods -n custom-metrics -lapp=prometheus-adapter``
+``kubectl apply -f $POW_DIR/prometheus/prometheus-config.yaml && kubectl delete pods -nmonitoring -lapp=prometheus-server && kubectl apply -f $POW_DIR/prometheus/custom-metrics-config.yml && kubectl delete pods -n custom-metrics -lapp=custom-metrics-apiserver``
 
 The above command creates a new updated configuration and reboots Prometheus and the Prometheus Adapter. Collectd power metrics should now be available in the Prometheus database and, more importantly, inside the Kubernetes cluster itself. In order to confirm we can run a raw metrics query against the Kubernetes api.
 

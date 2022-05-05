@@ -27,8 +27,8 @@ data:
       scrape_interval: 5s
       scrape_timeout: 5s
     rule_files:
-    - /etc/config/alerting_rules.yml
-    - /etc/config/recording_rules.yml
+    - /etc/prometheus/alerting_rules.yml
+    - /etc/prometheus/recording_rules.yml
     scrape_configs:
     - bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
       job_name: kubernetes-apiservers
@@ -168,5 +168,5 @@ metadata:
   labels:
     app: prometheus
     component: server
-  name: health-metrics-prometheus-server
+  name: prometheus-server-conf
   namespace: monitoring
