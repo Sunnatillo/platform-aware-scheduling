@@ -273,7 +273,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: registry.nordix.org/docker-hub-proxy/library/nginx:latest
         imagePullPolicy: IfNotPresent
         resources:
           limits:

@@ -25,7 +25,7 @@ spec:
         - --key=/tas/cert/tls.key
         - --cacert=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
         - --v=2
-        image: intel/telemetry-aware-scheduling
+        image: registry.eccd.local:5000/telemetry-aware-scheduling
         imagePullPolicy: IfNotPresent
         securityContext:
           capabilities:

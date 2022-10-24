@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: stressng
-        image: localhost:5000/stressng 
+        image: registry.eccd.local:5000/stressng
         command: [ "/bin/bash", "-c", "--" ]
         args: [ "sleep 30; stress-ng --cpu 12 --timeout 300s" ]
         resources:

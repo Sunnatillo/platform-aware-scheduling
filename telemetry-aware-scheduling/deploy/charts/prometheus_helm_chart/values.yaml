@@ -15,7 +15,7 @@ deploymentName: prometheus-deployment
 deploymentNamespace: monitoring
 deploymentAppName: prometheus-server
 containerName:  prometheus
-containerImage: prom/prometheus:v2.2.1
+containerImage: registry.eccd.local:5000/prometheus:v2.2.1
 
 serviceName1: prometheus-service
 serviceName2: prom-service

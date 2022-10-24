@@ -18,7 +18,7 @@ spec:
         app.kubernetes.io/version: v5.11 
     spec:
       containers:
-      - image: localhost:5000/collectdpower
+      - image: registry.eccd.local:5000/collectdpower
         imagePullPolicy: Always
         name: collectd
         command: [ "/bin/sh", "-c", "collectd; while :; do sleep 300; done" ]
