@@ -23,7 +23,7 @@ spec:
       - effect: NoSchedule
         key: node-role.kubernetes.io/control-plane
       containers:
-      - image: registry.eccd.local:5000/collectdpower
+      - image: registry.nordix.org/docker-hub-proxy/sunnatillo/collectdpower
         imagePullPolicy: Always
         name: collectd
         command: [ "/bin/sh", "-c", "collectd; while :; do sleep 300; done" ]

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: registry.eccd.local:5000/nginx:latest
+        image: registry.nordix.org/docker-hub-proxy/library/nginx:latest
         imagePullPolicy: IfNotPresent
         resources:
           limits:
