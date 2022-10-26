@@ -21,7 +21,15 @@ spec:
         image: registry.eccd.local:5000/stressng
         command: [ "/bin/bash", "-c", "--" ]
         args: [ "sleep 30; stress-ng --cpu 12 --timeout 300s" ]
-        resources:
-          limits:
-            telemetry/scheduling: 1
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: power-sensitive-scheduling-policy
+                    operator: NotIn
+                    values:
+                      - violating
+
+        
 
