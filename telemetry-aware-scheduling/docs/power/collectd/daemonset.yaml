@@ -17,6 +17,11 @@ spec:
         app.kubernetes.io/name: collectd
         app.kubernetes.io/version: v5.11 
     spec:
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/control-plane
       containers:
       - image: registry.eccd.local:5000/collectdpower
         imagePullPolicy: Always
